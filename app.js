@@ -141,11 +141,19 @@ function goToBeginning() {
   showPage('2018');
 }
 
+/** Return candidate URLs for a year's audio (GitHub Pages is case-sensitive: .mp3 vs .MP3). */
+function getAudioCandidates(year) {
+  const base = `audio/${year}_vday`;
+  return [
+    base + '.mp3',
+    base + '.MP3',
+  ].map((p) => new URL(p, window.location.href).href);
+}
+
 function playBahbStory() {
   const year = getCurrentYear();
   if (year == null) return;
-  const src = BAHB_AUDIO_BY_YEAR[year];
-  if (!src) return;
+  if (!BAHB_AUDIO_BY_YEAR[year]) return;
 
   if (bahbAudio && bahbAudioYear === year) {
     bahbAudio.play();
@@ -153,22 +161,31 @@ function playBahbStory() {
     return;
   }
 
-  const audioUrl = new URL(src, window.location.href).href;
-  const audio = new Audio(audioUrl);
-  bahbAudio = audio;
-  bahbAudioYear = year;
-  audio.onplay = () => setBahbButtonPlaying(true);
-  audio.onended = () => {
-    setBahbButtonPlaying(false);
-    bahbAudio = null;
-    bahbAudioYear = null;
-  };
-  audio.onerror = () => {
-    setBahbButtonPlaying(false);
-    bahbAudio = null;
-    bahbAudioYear = null;
-  };
-  audio.play();
+  const candidates = getAudioCandidates(year);
+  let index = 0;
+
+  function tryNext() {
+    if (index >= candidates.length) {
+      setBahbButtonPlaying(false);
+      bahbAudio = null;
+      bahbAudioYear = null;
+      return;
+    }
+    const audioUrl = candidates[index++];
+    const audio = new Audio(audioUrl);
+    bahbAudio = audio;
+    bahbAudioYear = year;
+    audio.onplay = () => setBahbButtonPlaying(true);
+    audio.onended = () => {
+      setBahbButtonPlaying(false);
+      bahbAudio = null;
+      bahbAudioYear = null;
+    };
+    audio.onerror = tryNext;
+    audio.play();
+  }
+
+  tryNext();
 }
 
 function pauseBahbStory() {
