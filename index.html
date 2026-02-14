@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="./">
+  <title>The V-Day Bahb Chronicles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="site-header">
+      <h1 class="site-title">The V-Day Bahb Chronicles</h1>
+      <button type="button" class="btn-narrate btn-bahb" id="btn-bahb" aria-label="Listen to V-Day in this year">Listen to V-Day in 2019</button>
+    </header>
+
+    <main class="content">
+      <article id="year-2018" class="year-page" data-year="2018">
+        <div class="year-images year-images--1 year-images--firstpage">
+          <div class="year-image"><img src="images/2018_firstpage.jpg" alt="" loading="eager" onerror="this.onerror=null;this.src='images/2018_firstpage.png'"></div>
+        </div>
+      </article>
+
+      <article id="year-2019" class="year-page" data-year="2019">
+        <h2 class="year-heading">2019</h2>
+        <div class="year-images year-images--2">
+          <div class="year-image"><img src="images/2019_1.JPG" alt="" loading="lazy"></div>
+          <div class="year-image"><img src="images/2019_2.png" alt="" loading="lazy"></div>
+        </div>
+      </article>
+
+      <article id="year-2020" class="year-page" data-year="2020">
+        <h2 class="year-heading">2020</h2>
+        <div class="year-images year-images--2">
+          <div class="year-image"><img src="images/2020_1.jpeg" alt="" loading="lazy"></div>
+          <div class="year-image"><img src="images/2020_2.JPG" alt="" loading="lazy"></div>
+        </div>
+      </article>
+
+      <article id="year-2021" class="year-page" data-year="2021">
+        <h2 class="year-heading">2021</h2>
+        <div class="year-images year-images--2">
+          <div class="year-image"><img src="images/2021_1.png" alt="" loading="lazy"></div>
+          <div class="year-image"><img src="images/2021_2.png" alt="" loading="lazy"></div>
+        </div>
+      </article>
+
+      <article id="year-2022" class="year-page" data-year="2022">
+        <h2 class="year-heading">2022</h2>
+        <div class="year-images year-images--2">
+          <div class="year-image"><img src="images/2022_1.png" alt="" loading="lazy"></div>
+          <div class="year-image"><img src="images/2022_2.png" alt="" loading="lazy"></div>
+        </div>
+      </article>
+
+      <article id="year-2023" class="year-page" data-year="2023">
+        <h2 class="year-heading">2023</h2>
+        <div class="year-images year-images--2">
+          <div class="year-image"><img src="images/2023_1.png" alt="" loading="lazy"></div>
+          <div class="year-image"><img src="images/2023_2.png" alt="" loading="lazy"></div>
+        </div>
+      </article>
+
+      <article id="year-2024" class="year-page" data-year="2024">
+        <h2 class="year-heading">2024</h2>
+        <div class="year-images year-images--2">
+          <div class="year-image"><img src="images/2024_1.JPG" alt="" loading="lazy"></div>
+          <div class="year-image"><img src="images/2024_2.JPEG" alt="" loading="lazy"></div>
+        </div>
+      </article>
+
+      <article id="year-2025" class="year-page" data-year="2025">
+        <h2 class="year-heading">2025</h2>
+        <div class="year-images year-images--1">
+          <div class="year-image"><img src="images/2025_1.png" alt="" loading="lazy"></div>
+        </div>
+      </article>
+
+      <article id="page-reflections" class="year-page" data-year="reflections">
+        <h2 class="year-heading">Reflections of Bahbs in Love</h2>
+        <div class="year-images year-images--4">
+          <div class="year-image"><img src="images/1_newPage.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='images/1_newPage.jpg'"></div>
+          <div class="year-image"><img src="images/2_newPage.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='images/2_newPage.jpg'"></div>
+          <div class="year-image"><img src="images/3_newPage.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='images/3_newPage.jpg'"></div>
+          <div class="year-image"><img src="images/4_newPage.png" alt="" loading="lazy" onerror="this.onerror=null;this.src='images/4_newPage.jpg'"></div>
+        </div>
+        <nav class="reflections-nav" aria-label="Reflections page navigation">
+          <button type="button" class="btn-reflections btn-back-2025">← Back to 2025</button>
+          <button type="button" class="btn-reflections btn-back-beginning">Go back to the beginning</button>
+        </nav>
+      </article>
+    </main>
+
+    <nav class="year-nav" aria-label="Navigate between years">
+      <button type="button" class="btn-nav btn-prev" aria-label="Previous year" disabled>
+        <span class="btn-label">Previous</span>
+        <span class="btn-year"></span>
+      </button>
+      <div class="year-dots" aria-hidden="true">
+        <button type="button" class="dot" data-year="2018" aria-label="Go to 2018"></button>
+        <button type="button" class="dot" data-year="2019" aria-label="Go to 2019"></button>
+        <button type="button" class="dot" data-year="2020" aria-label="Go to 2020"></button>
+        <button type="button" class="dot" data-year="2021" aria-label="Go to 2021"></button>
+        <button type="button" class="dot" data-year="2022" aria-label="Go to 2022"></button>
+        <button type="button" class="dot" data-year="2023" aria-label="Go to 2023"></button>
+        <button type="button" class="dot" data-year="2024" aria-label="Go to 2024"></button>
+        <button type="button" class="dot" data-year="2025" aria-label="Go to 2025"></button>
+        <button type="button" class="dot" data-year="reflections" aria-label="Go to Reflections"></button>
+      </div>
+      <button type="button" class="btn-nav btn-next" aria-label="Next year">
+        <span class="btn-label">Next</span>
+        <span class="btn-year"></span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
