@@ -141,12 +141,14 @@ function goToBeginning() {
   showPage('2018');
 }
 
-/** Return candidate URLs for a year's audio (GitHub Pages is case-sensitive: .mp3 vs .MP3). */
+/** Return candidate URLs for a year's audio (GitHub Pages is case-sensitive). */
 function getAudioCandidates(year) {
-  const base = `audio/${year}_vday`;
   return [
-    base + '.mp3',
-    base + '.MP3',
+    `audio/${year}_vday.mp3`,
+    `audio/${year}_vday.MP3`,
+    `audio/${year}_vday.Mp3`,
+    `audio/${year}.mp3`,
+    `audio/${year}.MP3`,
   ].map((p) => new URL(p, window.location.href).href);
 }
 
