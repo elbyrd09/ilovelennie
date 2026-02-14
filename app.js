@@ -141,12 +141,15 @@ function goToBeginning() {
   showPage('2018');
 }
 
-/** Return candidate URLs for a year's audio (GitHub Pages is case-sensitive). */
+/** Return candidate URLs for a year's audio (GitHub Pages is case-sensitive: vday vs VDAY, .mp3 vs .MP3). */
 function getAudioCandidates(year) {
   return [
     `audio/${year}_vday.mp3`,
     `audio/${year}_vday.MP3`,
-    `audio/${year}_vday.Mp3`,
+    `audio/${year}_VDAY.mp3`,
+    `audio/${year}_VDAY.MP3`,
+    `audio/${year}_Vday.mp3`,
+    `audio/${year}_Vday.MP3`,
     `audio/${year}.mp3`,
     `audio/${year}.MP3`,
   ].map((p) => new URL(p, window.location.href).href);
